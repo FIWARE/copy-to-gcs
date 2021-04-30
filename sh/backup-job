@@ -1,0 +1,1 @@
+BACKUP_SCHEDULE /sh/copy-files.sh||/sh/kill-container.sh > /proc/1/fd/1 2>/proc/1/fd/2

@@ -1,7 +1,7 @@
 # Copy to GCS
 
 A simple docker image to copy files from a given folder as tar-archive to a gcs-bucket. It can f.e. be used to backup filestructures from PVCs inside
-Kubernetes.
+Kubernetes. The copy will be executed on a cron schedule. If the copy fails, the container will be killed.
 
 ## Config
 
@@ -9,6 +9,7 @@ Following env vars are supported:
 
 |  Env-Var | Description | Example |
 | ----------------- | ----------------------------------------------- | ------------------------ |
+| BACKUP_SCHEDULE      | The cron schedule to be executed   |  * 1 * * *  |                            
 | BACKUP_FOLDER        | The folder to be copied into gcs   |  /backup  |                            
 | BACKUP_FILE_PREFIX | Prefix to be used for the tar-file. Will create a name in form of ```<Prefix>-backup-<date>.tar.gz```     |  backup   |
 | GCS_KEYFILE_PATH | Path to the serviceaccount json file to be used for the bucket. | /gcs/credentials.json |
