@@ -13,7 +13,7 @@ jobs:
   
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  push-test:
+  build-and-push:
 
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
