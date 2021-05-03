@@ -45,10 +45,12 @@ jobs:
         run: echo "::set-output name=version::$(echo ${VERSION}-PRE-${{ steps.pr_number.outputs.nr }})"
 
       - name: Build image
-        run: docker build -t wistefan/copy-to-gcs:${VERSION} -f Dockerfile .
+        run: docker build -t wistefan/copy-to-gcs:${{ steps.out.outputs.version }},wistefan/copy-to-gcs:latest -f Dockerfile .
 
       - name: Push image
-        run: docker push wistefan/copy-to-gcs:${VERSION}
+        run: |
+          - docker push wistefan/copy-to-gcs:${{ steps.out.outputs.version }}
+          - docker push wistefan/copy-to-gcs:latest
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
