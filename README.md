@@ -1,7 +1,16 @@
-# Copy to GCS
+# <a name="top"></a>Copy to GCS
+[![License: MIT](https://img.shields.io/github/license/FIWARE/helm-charts.svg)](https://opensource.org/licenses/MIT)
+[![Docker badge](https://img.shields.io/docker/pulls/fiware/copy-to-gcs.svg)](https://hub.docker.com/r/fiware/copy-to-gcs/)
+
 
 A simple docker image to copy files from a given folder as tar-archive to a gcs-bucket. It can f.e. be used to backup filestructures from PVCs inside
 Kubernetes. The copy will be executed on a cron schedule. If the copy fails, the container will be killed.
+
+| :whale: [Docker Hub](https://hub.docker.com/r/fiware/copy-to-gcs/) | 
+
+## Table of contents
+* [Config](#config)
+* [Usage](#Usage)
 
 ## Config
 
