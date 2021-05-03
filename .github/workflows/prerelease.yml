@@ -45,7 +45,7 @@ jobs:
         run: echo "::set-output name=version::$(echo ${VERSION}-PRE-${{ steps.pr_number.outputs.nr }})"
 
       - name: Build image
-        run: docker build -t  $IMAGE_NAME:${VERSION} -f Dockerfile .
+        run: docker build -t wistefan/copy-to-gcs:${VERSION} -f Dockerfile .
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
