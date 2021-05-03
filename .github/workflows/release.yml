@@ -38,7 +38,7 @@ jobs:
         with:
           push: true
           tags: |
-            fiware/copy-to-gcs:${VERSION}
+            fiware/copy-to-gcs:$VERSION
             fiware/copy-to-gcs:latest
 
       - name: Set version output
