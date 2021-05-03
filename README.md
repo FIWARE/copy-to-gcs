@@ -6,7 +6,7 @@
 A simple docker image to copy files from a given folder as tar-archive to a gcs-bucket. It can f.e. be used to backup filestructures from PVCs inside
 Kubernetes. The copy will be executed on a cron schedule. If the copy fails, the container will be killed.
 
-| :whale: [Docker Hub](https://hub.docker.com/r/fiware/mintaka/) | 
+| :whale: [Docker Hub](https://hub.docker.com/r/fiware/copy-to-gcs/) | 
 
 ## Table of contents
 * [Config](#config)
