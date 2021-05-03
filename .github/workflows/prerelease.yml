@@ -50,8 +50,8 @@ jobs:
         with:
           push: true
           tags: |
-            wistefan/copy-to-gcs:${{ steps.out.outputs.version }}
-            wistefan/copy-to-gcs:latest
+            fiware/copy-to-gcs:${{ steps.out.outputs.version }}
+            fiware/copy-to-gcs:latest
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
