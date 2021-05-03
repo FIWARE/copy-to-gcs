@@ -35,6 +35,9 @@ jobs:
       - name: Build image
         run: docker build -t  wistefan/copy-to-gcs:${VERSION} -f Dockerfile .
 
+      - name: Push image
+        run: docker push wistefan/copy-to-gcs:${VERSION}
+
       - name: Set version output
         id: out
         run: echo "::set-output name=version::$(echo $VERSION)"
