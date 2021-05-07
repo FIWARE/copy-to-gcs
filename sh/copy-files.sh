@@ -2,9 +2,9 @@
 
 set -e
 
-echo "Run copy"
-
 date=$(date "+%Y-%m-%dT%H:%M:%SZ")
+echo "Run copy" $date
+
 filename=${BACKUP_FILE_PREFIX}-backup-${date}.tar.gz
 tar -czvf /temp/${filename} ${BACKUP_FOLDER}
 
