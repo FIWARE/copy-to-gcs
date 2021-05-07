@@ -1,1 +1,3 @@
-BACKUP_SCHEDULE /sh/copy-files.sh||/sh/kill-container.sh > /proc/1/fd/1 2>/proc/1/fd/2
+BASH_ENV=/container.env
+
+BACKUP_SCHEDULE /sh/copy-files.sh > /proc/$(cat /var/run/crond.pid)/fd/1 2>/proc/$(cat /var/run/crond.pid)/fd/2 || /sh/kill-container.sh > /proc/$(cat /var/run/crond.pid)/fd/1 2>/proc/$(cat /var/run/crond.pid)/fd/2
